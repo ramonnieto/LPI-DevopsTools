@@ -1,0 +1,9 @@
+network:
+  ethernets:
+     eth0:
+       dhcp4: no
+       addresses: [10.0.2.10/24]
+         #     gateway4: 10.0.2.1
+       nameservers:
+         addresses: [208.67.222.222]
+  version: 2
