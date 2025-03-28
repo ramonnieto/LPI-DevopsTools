@@ -28,7 +28,7 @@ cd /usr/local/
 #tar -xf jre-8u131-linux-x64.tar.gz && rm -f jre-8u131-linux-x64.tar.gz
 #mv jre1.8.0_131 java
 # Instalación openjdk 17 para la misma que jenkis
-sudo apt-get install openjdk-17-jdk -y 
+sudo apt-get update && sudo apt-get install openjdk-17-jdk -y 
  
 echo 'JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17-jdk-amd64
 export JAVA_HOME
