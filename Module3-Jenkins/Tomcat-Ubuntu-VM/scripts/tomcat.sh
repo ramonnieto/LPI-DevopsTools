@@ -1,11 +1,11 @@
 #!/bin/bash
 ### Install Tomcat 9 + JRE8 on Ubuntu, Debian, CentOS, OpenSUSE 64Bits
-### URL com Screencast de Instalação do Tomcat9
+### URL com Screencast de Instalação do Tomcat9 --> v10
 ### http://www.linuxpro.com.br/2017/04/instalando-tomcat-9-no-ubuntu/
 ### Link: https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-centos-7
 ## Var definitions
 # Check the updated version here -> https://dlcdn.apache.org/tomcat/tomcat-9
-TOMCAT_VERSION="9.0.93"
+TOMCAT_VERSION="9.0.102"
 
 
 ## First install wget
@@ -24,12 +24,13 @@ echo "Installing java"
 groupadd tomcat && useradd -M -s /bin/nologin -g tomcat -d /usr/local/tomcat tomcat
 
 cd /usr/local/
-wget --header 'Cookie: oraclelicense=a' http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jre-8u131-linux-x64.tar.gz > /dev/null 2>&1
-tar -xf jre-8u131-linux-x64.tar.gz && rm -f jre-8u131-linux-x64.tar.gz
-mv jre1.8.0_131 java
-
+#wget --header 'Cookie: oraclelicense=a' http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jre-8u131-linux-x64.tar.gz > /dev/null 2>&1
+#tar -xf jre-8u131-linux-x64.tar.gz && rm -f jre-8u131-linux-x64.tar.gz
+#mv jre1.8.0_131 java
+# Instalación openjdk 17 para la misma que jenkis
+sudo apt-get install openjdk-17-jdk -y 
  
-echo 'JAVA_HOME=/usr/local/java
+echo 'JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17-jdk-amd64
 export JAVA_HOME
 PATH=$PATH:$JAVA_HOME/bin
 export PATH' >> /etc/profile

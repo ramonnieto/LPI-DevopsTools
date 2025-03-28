@@ -16,6 +16,8 @@ Vagrant.configure("2") do |config|
   config.vm.define :tomcat do |tomcat_config|
 		tomcat_config.vm.host_name = "tomcat"
 		tomcat_config.vm.network "private_network", ip:settings["nodes"]["ip1"]
+		#Redireccion puertos
+		tomcat_config.vm.network "forwarded_port", guest: 8080, host: 8000
 		
 	end
 
